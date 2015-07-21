@@ -57,6 +57,13 @@ class MasterViewController: UITableViewController {
         
         if wordIsPossible(lowerAnswer) {
             if wordIsOriginal(lowerAnswer) {
+                if (lowerAnswer == title) {
+                    let ac = UIAlertController(title: "Unoriginal word", message: "Be more original!", preferredStyle: .Alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    presentViewController(ac, animated: true, completion: nil)
+                    return
+                }
+                
                 if wordIsReal(lowerAnswer) {
                     objects.insert(answer, atIndex: 0)
                     
