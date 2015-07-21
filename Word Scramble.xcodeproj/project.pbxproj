@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		CA518F471B5DA48900508293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA518F461B5DA48900508293 /* AppDelegate.swift */; };
 		CA518F491B5DA48900508293 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA518F481B5DA48900508293 /* MasterViewController.swift */; };
-		CA518F4B1B5DA48900508293 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA518F4A1B5DA48900508293 /* DetailViewController.swift */; };
 		CA518F4E1B5DA48900508293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA518F4C1B5DA48900508293 /* Main.storyboard */; };
 		CA518F501B5DA48900508293 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA518F4F1B5DA48900508293 /* Images.xcassets */; };
 		CA518F531B5DA48900508293 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA518F511B5DA48900508293 /* LaunchScreen.xib */; };
 		CA518F5F1B5DA48900508293 /* Word_ScrambleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA518F5E1B5DA48900508293 /* Word_ScrambleTests.swift */; };
+		CA518F691B5DAC0000508293 /* Array+Shuffling.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA518F681B5DAC0000508293 /* Array+Shuffling.swift */; };
+		CA518F6B1B5E170B00508293 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = CA518F6A1B5E170B00508293 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +32,14 @@
 		CA518F451B5DA48900508293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA518F461B5DA48900508293 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA518F481B5DA48900508293 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		CA518F4A1B5DA48900508293 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		CA518F4D1B5DA48900508293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA518F4F1B5DA48900508293 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CA518F521B5DA48900508293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		CA518F581B5DA48900508293 /* Word ScrambleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Word ScrambleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA518F5D1B5DA48900508293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA518F5E1B5DA48900508293 /* Word_ScrambleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_ScrambleTests.swift; sourceTree = "<group>"; };
+		CA518F681B5DAC0000508293 /* Array+Shuffling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffling.swift"; sourceTree = "<group>"; };
+		CA518F6A1B5E170B00508293 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = Content/start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				CA518F461B5DA48900508293 /* AppDelegate.swift */,
+				CA518F681B5DAC0000508293 /* Array+Shuffling.swift */,
 				CA518F481B5DA48900508293 /* MasterViewController.swift */,
-				CA518F4A1B5DA48900508293 /* DetailViewController.swift */,
 				CA518F4C1B5DA48900508293 /* Main.storyboard */,
 				CA518F4F1B5DA48900508293 /* Images.xcassets */,
 				CA518F511B5DA48900508293 /* LaunchScreen.xib */,
@@ -93,6 +95,7 @@
 		CA518F441B5DA48900508293 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA518F6A1B5E170B00508293 /* start.txt */,
 				CA518F451B5DA48900508293 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -196,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA518F4E1B5DA48900508293 /* Main.storyboard in Resources */,
+				CA518F6B1B5E170B00508293 /* start.txt in Resources */,
 				CA518F531B5DA48900508293 /* LaunchScreen.xib in Resources */,
 				CA518F501B5DA48900508293 /* Images.xcassets in Resources */,
 			);
@@ -215,9 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA518F4B1B5DA48900508293 /* DetailViewController.swift in Sources */,
 				CA518F491B5DA48900508293 /* MasterViewController.swift in Sources */,
 				CA518F471B5DA48900508293 /* AppDelegate.swift in Sources */,
+				CA518F691B5DAC0000508293 /* Array+Shuffling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
