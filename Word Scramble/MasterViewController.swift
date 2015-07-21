@@ -24,6 +24,8 @@ class MasterViewController: UITableViewController {
         if let startWordsPath = NSBundle.mainBundle().pathForResource("start", ofType: "txt") {
             if let startWords = NSString(contentsOfFile: startWordsPath, usedEncoding: nil, error: nil) {
                 allWords = startWords.componentsSeparatedByString("\n") as! [String]
+            } else {
+                loadDefaultWords()
             }
         } else {
             allWords = ["silkworm"]
@@ -31,6 +33,10 @@ class MasterViewController: UITableViewController {
         startGame()
     }
 
+    func loadDefaultWords() {
+        allWords = ["zucchini"]
+    }
+    
     func startGame() {
         allWords.shuffle()
         title = allWords[0]
