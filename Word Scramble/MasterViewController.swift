@@ -33,6 +33,10 @@ class MasterViewController: UITableViewController {
         startGame()
     }
 
+    func showErrorMessage() {
+        
+    }
+    
     func loadDefaultWords() {
         allWords = ["zucchini"]
     }
@@ -50,7 +54,7 @@ class MasterViewController: UITableViewController {
         
         let submitAction = UIAlertAction(title: "Submit", style: .Default) { [unowned self, ac] (action: UIAlertAction!) in
             let answer = ac.textFields![0] as! UITextField
-            self.submitAnswer(answer.text)
+            self.submitAnswer(answer.text.lowercaseString)
         }
         
         ac.addAction(submitAction)
@@ -59,18 +63,17 @@ class MasterViewController: UITableViewController {
     }
     
     func submitAnswer(answer: String) {
-        let lowerAnswer = answer.lowercaseString
         
-        if wordIsPossible(lowerAnswer) {
-            if wordIsOriginal(lowerAnswer) {
-                if (lowerAnswer == title) {
+        if wordIsPossible(answer) {
+            if wordIsOriginal(answer) {
+                if (answer == title) {
                     let ac = UIAlertController(title: "Unoriginal word", message: "Be more original!", preferredStyle: .Alert)
                     ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     presentViewController(ac, animated: true, completion: nil)
                     return
                 }
                 
-                if wordIsReal(lowerAnswer) {
+                if wordIsReal(answer) {
                     objects.insert(answer, atIndex: 0)
                     
                     let indexPath = NSIndexPath(forRow: 0, inSection: 0)
