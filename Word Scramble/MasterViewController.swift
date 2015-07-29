@@ -32,10 +32,6 @@ class MasterViewController: UITableViewController {
         }
         startGame()
     }
-
-    func showErrorMessage() {
-        
-    }
     
     func loadDefaultWords() {
         allWords = ["zucchini"]
@@ -67,10 +63,7 @@ class MasterViewController: UITableViewController {
         if wordIsPossible(answer) {
             if wordIsOriginal(answer) {
                 if (answer == title) {
-                    let ac = UIAlertController(title: "Unoriginal word", message: "Be more original!", preferredStyle: .Alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    presentViewController(ac, animated: true, completion: nil)
-                    return
+                    showErrorMessage("Unoriginal word", message: "Be more original!")
                 }
                 
                 if wordIsReal(answer) {
@@ -79,20 +72,20 @@ class MasterViewController: UITableViewController {
                     let indexPath = NSIndexPath(forRow: 0, inSection: 0)
                     tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
                 } else {
-                    let ac = UIAlertController(title: "Word not recognised", message: "You can't just make them up, you know!", preferredStyle: .Alert)
-                    ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    presentViewController(ac, animated: true, completion: nil)
+                    showErrorMessage("Word not recognised", message: "You can't just make them up, you know!")
                 }
             } else {
-                let ac = UIAlertController(title: "Word used already", message: "Be more original!", preferredStyle: .Alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                presentViewController(ac, animated: true, completion: nil)
-            }
+                showErrorMessage("Word used already", message: "Be more original!")            }
         } else {
-            let ac = UIAlertController(title: "Word not possible", message: "You can't spell that word from '\(title!.lowercaseString)'!", preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(ac, animated: true, completion: nil)
+            showErrorMessage("Word not possible", message: "You can't spell that word from '\(title!.lowercaseString)'!")
         }
+    }
+    
+    func showErrorMessage(title: String!, message: String!) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(ac, animated: true, completion: nil)
+        return
     }
     
     func wordIsPossible(word: String) -> Bool {
